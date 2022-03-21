@@ -1,0 +1,54 @@
+{
+  "root": "packages/app/math-4-kids",
+  "sourceRoot": "packages/app/math-4-kids",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "packages/app/math-4-kids",
+        "outputPath": "dist/packages/app/math-4-kids"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "app-math-4-kids:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "app-math-4-kids:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "app-math-4-kids:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/app/math-4-kids"],
+      "options": {
+        "jestConfig": "packages/app/math-4-kids/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/app/math-4-kids/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": ["type:app"]
+}
