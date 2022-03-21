@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "app-cats-and-dogs": "packages/app/cats-and-dogs",
+    "app-math-4-kids": "packages/app/math-4-kids"
+  }
 }

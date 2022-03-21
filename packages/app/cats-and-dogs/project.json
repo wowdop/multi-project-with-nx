@@ -1,0 +1,54 @@
+{
+  "root": "packages/app/cats-and-dogs",
+  "sourceRoot": "packages/app/cats-and-dogs",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "packages/app/cats-and-dogs",
+        "outputPath": "dist/packages/app/cats-and-dogs"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "app-cats-and-dogs:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "app-cats-and-dogs:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "app-cats-and-dogs:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/app/cats-and-dogs"],
+      "options": {
+        "jestConfig": "packages/app/cats-and-dogs/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/app/cats-and-dogs/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": ["type:app"]
+}
