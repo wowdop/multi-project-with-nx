@@ -22,6 +22,7 @@ export default class CustomDocument extends Document<{
     return (
       <Html>
         <Head>{this.props.styleTags}</Head>
+
         <body>
           <Main />
           <NextScript />

@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "app-cats-and-dogs": "packages/app/cats-and-dogs",
-    "app-math-4-kids": "packages/app/math-4-kids"
+    "app-math-4-kids": "packages/app/math-4-kids",
+    "lib-atom": "packages/lib/atom"
   }
 }

@@ -19,7 +19,8 @@
       "executor": "@nrwl/next:server",
       "options": {
         "buildTarget": "app-math-4-kids:build",
-        "dev": true
+        "dev": true,
+        "port": 4201
       },
       "configurations": {
         "production": {

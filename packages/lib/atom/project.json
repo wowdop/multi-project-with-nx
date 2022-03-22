@@ -1,0 +1,23 @@
+{
+  "root": "packages/lib/atom",
+  "sourceRoot": "packages/lib/atom/src",
+  "projectType": "library",
+  "tags": ["type:atom"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/lib/atom/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/lib/atom"],
+      "options": {
+        "jestConfig": "packages/lib/atom/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
