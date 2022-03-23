@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mpnx": ["packages/lib/atom/src/index.ts"]
+      "@mpnx/atom": ["packages/lib/atom/src/index.ts"],
+      "@mpnx/theme": ["packages/lib/theme/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

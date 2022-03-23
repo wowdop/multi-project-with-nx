@@ -1,18 +1,17 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
+import { themeCD } from '@mpnx/theme'
+import { AppProps } from 'next/app'
+import { ThemeProvider } from 'styled-components'
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <Head>
-        <title>Welcome to cats-and-dogs!</title>
-      </Head>
-
       <main>
-        <Component {...pageProps} />
+        <ThemeProvider theme={themeCD}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default CustomApp;
+export default CustomApp
