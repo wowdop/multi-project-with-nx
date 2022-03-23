@@ -1,18 +1,17 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
+import { themeM4K } from '@mpnx/theme'
+import { AppProps } from 'next/app'
+import { ThemeProvider } from 'styled-components'
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <Head>
-        <title>Welcome to math-4-kids!</title>
-      </Head>
-
       <main>
-        <Component {...pageProps} />
+        <ThemeProvider theme={themeM4K}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default CustomApp;
+export default CustomApp

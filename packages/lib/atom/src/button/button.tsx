@@ -1,9 +1,9 @@
 import * as T from './button.type'
 import * as S from './button.style'
 
-const Button = ({ children, dataTestid, color }: T.Button) => {
+const Button = ({ children, dataTestid, color, kind }: T.Button) => {
   return (
-    <S.Button data-testid={dataTestid} color={color}>
+    <S.Button data-testid={dataTestid} color={color} kind={kind}>
       {children}
     </S.Button>
   )

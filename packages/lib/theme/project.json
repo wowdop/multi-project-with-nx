@@ -1,0 +1,23 @@
+{
+  "root": "packages/lib/theme",
+  "sourceRoot": "packages/lib/theme/src",
+  "projectType": "library",
+  "tags": ["type:theme"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/lib/theme/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/lib/theme"],
+      "options": {
+        "jestConfig": "packages/lib/theme/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
