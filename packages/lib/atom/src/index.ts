@@ -1,2 +1,2 @@
-export { Button } from './button';
-export { Flex } from './flex'
+export { Button } from './lib/button'
+export { Flex } from './lib/flex'
