@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import * as T from './flex.type'
 
-const getPaddingMobile = ({ padding = 0 }) => {
+const getPaddingMobile = ({ padding = '' }) => {
   let arr = []
   if (Array.isArray(padding)) {
     arr = padding
@@ -12,18 +12,20 @@ const getPaddingMobile = ({ padding = 0 }) => {
   return arr.map((pad) => `${Math.round((pad * 100) / 14) / 100}rem`).join(' ')
 }
 
-const getPaddingTablet = ({ paddingTablet = '' }) => {
-  let arr = []
+const getPaddingTablet = ({ paddingTablet = '' }: { paddingTablet: any }) => {
+  let arr: (string | number)[] = []
   if (Array.isArray(paddingTablet)) {
     arr = paddingTablet
   } else if (Number(paddingTablet) === +paddingTablet) {
     arr = [paddingTablet]
   } else {
-    return []
+    arr = []
   }
 
   return arr.length
-    ? `padding ${arr.map((pad) => `${Math.round(pad / 14)}rem`).join(' ')}`
+    ? `padding ${arr
+        .map((pad) => `${Math.round(Number(pad) / 14)}rem`)
+        .join(' ')}`
     : ''
 }
 
@@ -42,8 +44,8 @@ export const Flex = styled.div<T.FlexStyle>`
     direction === 'column' ? direction : 'row'};
 
   @media screen and (min-width: 48rem) {
-    ${getPaddingTablet};
     flex-direction: ${({ direction = 'row' }) =>
       direction === 'row' ? direction : 'column'};
+    ${getPaddingTablet};
   }
 `

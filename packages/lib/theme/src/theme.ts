@@ -2,6 +2,7 @@ import { DefaultTheme } from 'styled-components'
 
 const theme: DefaultTheme = {
   bp: {
+    desktopFullHD: 1920,
     desktop: 1440,
     tablet: 768,
   },
