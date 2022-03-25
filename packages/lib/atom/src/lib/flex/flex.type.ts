@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 export interface FlexStyle {
   position?: string
   direction?: string
-  padding?: string
+  padding: string | number
   paddingTablet: string | number
   gap?: number
   align?: string
@@ -17,5 +17,6 @@ export interface Flex extends FlexStyle {
 }
 
 export const defaultProps = {
+  padding: '',
   paddingTablet: '',
 }
